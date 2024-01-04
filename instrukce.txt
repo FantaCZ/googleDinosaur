@@ -1,0 +1,6 @@
+
+Je nutné zapnout html soubor, aby se spustila hra v prohlížeči. 
+
+Po každém naražení do bloku je nutné znovu načíst stránku. 
+
+Enjoy.
