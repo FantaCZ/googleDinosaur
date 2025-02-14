@@ -1,44 +1,95 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-#game{
-
-        width: 500px;
-        height: 200px;
-        border: 1px solid black;
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
 }
 
-#character{
-
-        width: 20px;
-        height: 50px;
-        background-color: purple;
-        position: relative;
-        top: -50px;
-}
-.animate{       
-animation: jump 500ms ;
+#game {
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes jump{
-        0%{top: -50px;}
-        50%{top: -100px}
-        100%{top: -50px;}
+#character {
+    width: 20px;
+    height: 50px;
+    background-color: purple;
+    position: relative;
+    top: -50px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#block{
-
-        width: 20px;
-        height: 20px;
-        background-color: blue;
-        position: relative;
-        top: -70px;
-        left: 480px;
-        animation: block 1s infinite;
+.animate {
+    animation: jump 300ms ease-in-out; /* Faster jump */
 }
-@keyframes block{
-        0%{left: 480px;}
-        100%{left: -40;}
+
+@keyframes jump {
+    0% { top: -50px; }
+    50% { top: -100px; }
+    100% { top: -50px; }
+}
+
+#block {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position: relative;
+    top: -70px;
+    left: 480px;
+    display: none; /* Add this line */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes block {
+    0% { left: 480px; }
+    100% { left: -40px; } /* Fix the missing 'px' */
+}
+
+/* Add this new class for game over state */
+.game-over {
+    display: none;
+}
+
+#startButton {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 200ms ease-in-out;
+}
+
+#startButton:hover {
+    background-color: #45a049;
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
